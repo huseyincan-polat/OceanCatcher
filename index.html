@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ocean Catcher</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="gameWrapper">
+  <canvas id="gameCanvas" width="500" height="700"></canvas>
+
+  <div id="ui">
+    <div class="stat-box">
+      <div class="stat-label">Best</div>
+      <div class="stat-value" id="highScoreDisplay">0</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Score</div>
+      <div class="stat-value" id="scoreDisplay">0</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Level</div>
+      <div class="stat-value" id="levelDisplay">1</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Lives</div>
+      <div id="livesDisplay"></div>
+    </div>
+  </div>
+
+  <div id="levelBanner">Level Up! 🌊</div>
+
+  <div id="overlay">
+    <div class="emoji-big">🌊</div>
+    <h1>Ocean<br>Catcher</h1>
+    <p>Move your diver with <strong>← →</strong> arrow keys. Catch fish, avoid dangers!</p>
+    <div class="legend">
+      <p><strong>You start with 3 lives ❤️❤️❤️</strong></p>
+      <div class="legend-row"><span>🐟</span><span>Fish — +10 pts</span></div>
+      <div class="legend-row"><span>⭐</span><span>Starfish — +25 pts</span></div>
+      <div class="legend-row"><span>💎</span><span>Crystal — +50 pts</span></div>
+      <div class="legend-row"><span>🎁</span><span>Bonus Box — +100 pts</span></div>
+      <div class="legend-row"><span>🪼</span><span>Jellyfish — DANGER (−1 life)</span></div>
+      <div class="legend-row"><span>🗑️</span><span>Trash — DANGER (−1 life)</span></div>
+    </div>
+    <button id="startBtn">Dive In! 🤿</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

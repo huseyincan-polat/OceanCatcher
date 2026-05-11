@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  overflow: hidden;
+}
+
+#gameWrapper {
+  position: relative;
+  width: 480px;
+  height: 700px;
+}
+
+canvas {
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(0, 180, 255, 0.4), 0 0 120px rgba(0, 100, 200, 0.2);
+}
+
+#ui {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stat-box {
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  padding: 8px 16px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-family: 'Fredoka One', cursive;
+  font-size: 26px;
+  color: #fff;
+  line-height: 1;
+}
+
+#livesDisplay { display: flex; gap: 4px; align-items: center; margin-top: 4px; }
+.heart { font-size: 18px; }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background: rgba(5, 15, 50, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 20;
+  gap: 16px;
+  padding: 40px;
+}
+
+#overlay h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 52px;
+  color: white;
+  text-shadow:aqua;
+  line-height: 1;
+  text-align: center;
+}
+
+#overlay .emoji-big { font-size: 64px; }
+
+#overlay p {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+#overlay .legend {
+  background:black;
+  border-radius: 14px;
+  padding: 14px 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+#overlay .legend-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: white ;
+  padding: 4px 0;
+}
+
+#overlay .legend-row span:first-child { font-size: 22px; width: 30px; text-align: center; }
+
+#startBtn, #restartBtn {
+  margin-top: 8px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 22px;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 50px;
+  cursor: pointer;
+
+  transition: transform 0.15s, box-shadow 0.15s;
+  pointer-events: all;
+}
+
+#startBtn:hover, #restartBtn:hover {
+  transform: translateY(-3px);
+  
+}
+
+#finalScore {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+
+}
+
+#levelBanner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Fredoka One', cursive;
+  font-size: 42px;
+  color: 'white';
+  text-shadow: aqua;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 15;
+  white-space: nowrap;
+}
